@@ -1,0 +1,114 @@
+/* Reseteo de márgenes y padding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo general del body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que ocupe al menos el 100% de la altura de la ventana */
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Contenedor principal */
+.ihpone {
+    background-color: #ffffff;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    width: 90%; /* Ancho ajustable */
+    max-width: 400px; /* Límite de ancho máximo */
+    margin: 0 15px; /* Para márgenes laterales */
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos de los inputs */
+.input {
+    width: 100%; /* El ancho se adapta al 100% del contenedor */
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados en los campos */
+    font-size: 16px; /* Ajuste del tamaño de fuente */
+}
+
+/* Estilo del botón de login */
+.login-button {
+    background-color: #2448e7;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* El ancho se adapta al 100% */
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #1e3fbe;
+}
+
+/* Estilos para el texto debajo del formulario */
+.text-wrapper {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Estilo de los enlaces */
+.text-wrapper-6 {
+    color: #2448e7;
+    cursor: pointer;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+.text-wrapper-6:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para dispositivos más pequeños */
+
+/* Para pantallas de hasta 768px de ancho (tablets y móviles) */
+@media (max-width: 768px) {
+    .ihpone {
+        width: 100%; /* Ancho completo */
+        max-width: none; /* Elimina el límite de ancho máximo */
+        padding: 15px; /* Reducir padding para pantallas pequeñas */
+    }
+
+    .input, .login-button {
+        font-size: 14px; /* Reducir el tamaño de la fuente para móviles */
+        padding: 8px; /* Ajustar el padding de los inputs y botón */
+    }
+
+    h2 {
+        font-size: 20px; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+
+    .text-wrapper-6 {
+        font-size: 12px; /* Reducir tamaño de fuente de los enlaces en móviles */
+    }
+}
+
+/* Para pantallas de hasta 480px de ancho (móviles muy pequeños) */
+@media (max-width: 480px) {
+    .ihpone {
+        padding: 10px; /* Reducir más el padding */
+    }
+
+    .input, .login-button {
+        padding: 8px; /* Ajuste más pequeño para inputs y botón */
+    }
+}

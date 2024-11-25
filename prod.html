@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.userway.org/widget.js" data-account="K1UREd5u99"></script>
+
+    <script>
+      // Función para obtener el nombre de usuario desde la URL
+      function obtenerUsuario() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('usuario') || "Invitado"; // Si no hay usuario, mostrar "Invitado"
+      }
+  
+      // Función para actualizar el saludo en el dropdown
+      function actualizarSaludo() {
+        const usuario = obtenerUsuario();
+        document.getElementById("saludoUsuario").textContent = "¡Hola, " + usuario + "!";
+        document.getElementById("dropdownPerfil").href = "perfil.html?usuario=" + encodeURIComponent(usuario);
+      }
+  
+      // Llamar la función cuando la página se haya cargado
+      window.onload = actualizarSaludo;
+    </script>
+  </head>
+  <body style="background-color: #f8f9fa;">
+    
+   <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-sm" style="background-image: url('img_prod/img_001.jfif'); background-size: cover; background-position: center;">
+    <div class="container-fluid">
+        <!-- Título y subtítulo -->
+        <div>
+            <h1 class="text-light px-5">La Marquinita</h1>
+            <p class="navbar-text mt-0 text-light px-5">Sabor de Hogar</p>
+        </div>
+
+        <!-- Menú desplegable -->
+        <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menú
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Productos</a></li>
+                
+                <!-- Especialidades -->
+                <div class="container mt-3">
+                    <button class="btn btn-outline-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#especialidades" aria-expanded="false" aria-controls="especialidades" style="border-radius: 10px; transition: background-color 0.3s ease;">
+                        <h5 class="mb-0" style="font-weight: 600;">Especialidades</h5>
+                    </button>
+                    <div class="collapse" id="especialidades">
+                        <div class="card card-body" style="border: 1px solid #ddd; border-radius: 10px; margin-top: 10px; background-color: #f8f9fa; transition: transform 0.3s ease;">
+                            <h6 style="font-weight: 500;">Especialidad 1: Pan Dulce</h6>
+                            <p>Disfruta de nuestro pan dulce, preparado con ingredientes frescos y de calidad.</p>
+                            <img src="img_prod/img_009.jpg" class="img-fluid" alt="Pan Dulce">
+                            <p><small>Precio: S/. 2.00</small></p>
+                        </div>
+                        <div class="card card-body" style="border: 1px solid #ddd; border-radius: 10px; margin-top: 10px; background-color: #f8f9fa;">
+                            <h6 style="font-weight: 500;">Especialidad 2: Pan Integral</h6>
+                            <p>El pan integral más saludable, ideal para tu dieta.</p>
+                            <img src="img_prod/img_010.jpg" class="img-fluid" alt="Pan Integral">
+                            <p><small>Precio: S/. 3.00</small></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <li><hr class="dropdown-divider"></li>
+                
+                <!-- Promociones -->
+                <div class="container mt-3">
+                    <button class="btn btn-outline-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#promociones" aria-expanded="false" aria-controls="promociones" style="border-radius: 10px; transition: background-color 0.3s ease;">
+                        <h5 class="mb-0" style="font-weight: 600;">Promociones</h5>
+                    </button>
+                    <div class="collapse" id="promociones">
+                        <div class="card card-body" style="border: 1px solid #ddd; border-radius: 10px; margin-top: 10px; background-color: #f8f9fa; transition: transform 0.3s ease;">
+                            <h6 style="font-weight: 500;">Promoción 1: 2x1 en Panes</h6>
+                            <p>Compra 2 panes y lleva uno gratis. Solo por tiempo limitado.</p>
+                            <img src="img_prod/img_011.jpg" class="img-fluid" alt="Promoción 2x1">
+                            <p><small>Oferta válida hasta el 31 de diciembre</small></p>
+                        </div>
+                        <div class="card card-body" style="border: 1px solid #ddd; border-radius: 10px; margin-top: 10px; background-color: #f8f9fa;">
+                            <h6 style="font-weight: 500;">Promoción 2: 10% de descuento en pedidos grandes</h6>
+                            <p>Obtén un 10% de descuento si compras más de 10 panes.</p>
+                            <img src="img_prod/img_012.jpg" class="img-fluid" alt="Descuento por pedido grande">
+                            <p><small>Válido para compras superiores a S/. 20.00</small></p>
+                        </div>
+                    </div>
+                </div>
+            </ul>            
+          </li>
+      </ul>
+
+        <!-- Botón de navegación móvil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido del menú -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Barra de búsqueda -->
+            <form class="d-flex mx-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar Productos" aria-label="Buscar Productos">
+                <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+
+            <!-- Ícono y saludo alineados a la derecha -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown text-light">
+                <!-- Ícono del usuario con funcionalidad de dropdown -->
+                 <!-- Ícono del usuario con funcionalidad de dropdown -->
+                  <a href="#" class="nav-link dropdown-toggle d-flex flex-column align-items-center text-light" id="dropdownUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
+                    <h5 id="saludoUsuario" class="mt-2">¡Hola, Invitado!</h5>
+                  </a>
+
+                <!-- Dropdown del usuario -->
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUsuario">
+                  <li>
+                    <a class="dropdown-item" id="dropdownPerfil" href="perfil.html">Mi Perfil</a> <!-- Redirige a la página del perfil -->
+                  </li>
+                        <a class="dropdown-item text-danger" id="cerrarSesion" href="inicio_de_sesión__panaderia.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </li>
+          </ul>
+
+          <script>
+            // Saludo dinámico basado en el nombre del usuario
+            document.addEventListener("DOMContentLoaded", function () {
+                const saludoUsuario = document.getElementById('saludoUsuario');
+                const nombreUsuario = 'Juan'; // Puedes cambiar esto dinámicamente desde el backend
+                if (nombreUsuario) {
+                    saludoUsuario.textContent = `¡Hola, ${nombreUsuario}!`;
+                }
+            });
+
+            // Función para cerrar sesión
+            document.getElementById('cerrarSesion').addEventListener('click', function (event) {
+                event.preventDefault();
+                // Aquí puedes implementar lógica para cerrar sesión
+                alert('¿Estás seguro que quieres cerrar tu sesión?');
+                // Redireccionar al usuario (opcional)
+                window.location.href = 'inicio_de_sesión__panaderia.html'; // Cambia esta URL por la ruta de tu página de inicio de sesión
+            });
+          </script>
+        </div>
+    </div>
+</nav>
+
+  <!-- Banner -->
+  <div class="container-fluid py-3" style="background-color: #f3e8dd;">
+    <div class="row align-items-center">
+      <!-- Botón de ubicación -->
+      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start mb-2 mb-md-0">
+        <button class="btn d-flex align-items-center justify-content-between w-100 w-md-auto" 
+                style="background-color: #a1601e; color: #fff; border-radius: 30px; padding: 10px;" 
+                data-bs-toggle="modal" data-bs-target="#ubicacionModal">
+          <span>Ingresa tu ubicación</span>
+          <i class="bi bi-geo-alt-fill ms-2"></i>
+        </button>
+      </div>
+  
+      <!-- Botón de carrito -->
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0">
+        <button class="btn d-flex align-items-center justify-content-between w-100 w-md-auto" 
+                style="background-color: #a1601e; color: #fff; border-radius: 30px; padding: 10px;" 
+                onclick="mostrarCarrito()">
+          <span>Carrito de compras</span>
+          <i class="bi bi-cart-plus-fill ms-2"></i>
+        </button>
+      </div>
+  
+      <!-- Botón de ayuda -->
+      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+        <button class="btn d-flex align-items-center justify-content-between w-100 w-md-auto" 
+                style="background-color: #a1601e; color: #fff; border-radius: 30px; padding: 10px;" 
+                data-bs-toggle="modal" data-bs-target="#ayudaModal">
+          <span>¿Necesitas ayuda?</span>
+          <i class="bi bi-telephone-fill ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modales y scripts se mantienen igual -->
+  <!-- Modal para ubicación -->
+  <div class="modal fade" id="ubicacionModal" tabindex="-1" aria-labelledby="ubicacionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ubicacionModalLabel">Ingresa tu ubicación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="ubicacionForm">
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ej: Av. Principal #123">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Guardar Ubicación</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('ubicacionForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const direccion = document.getElementById('direccion').value;
+      alert('Ubicación guardada: ' + direccion);
+    });
+  
+    function mostrarCarrito() {
+      var carritoModal = new bootstrap.Modal(document.getElementById('carritoModal'));
+      carritoModal.show();
+    }
+  </script>
+  
+  <!-- Modal de carrito -->
+  <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tu carrito está vacío.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de ayuda -->
+  <div class="modal fade" id="ayudaModal" tabindex="-1" aria-labelledby="ayudaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ayudaModalLabel">¿Cómo podemos ayudarte?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Contáctanos mediante:</p>
+          <ul>
+            <li><a href="tel:+51951196187" class="btn btn-link">Llamada telefónica</a></li>
+            <li><a href="mailto:lisbethic0901@gmail.com" class="btn btn-link">Correo electrónico</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Banner 2 -->
+<div class="container-fluid position-relative" 
+     style="background-image: url('img_prod/img_002.jfif'); background-size: cover; background-position: center; padding: 20px; border-radius: 10px;">
+  <div class="row">
+    <div class="col-12 text-end">
+      <!-- Botón que abre el modal -->
+      <button class="btn btn-light d-inline-flex align-items-center" 
+              style="background-color: #a1601e; color: #fff; border-radius: 30px; padding: 10px;" 
+              data-bs-toggle="modal" data-bs-target="#entregasModal">
+        <span>Entregas gratis en Cajamarca</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para entregas gratuitas -->
+<div class="modal fade" id="entregasModal" tabindex="-1" aria-labelledby="entregasModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Encabezado del modal -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="entregasModalLabel">Detalles de entregas gratuitas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Contenido del modal -->
+      <div class="modal-body">
+        <p>¡Disfruta de entregas gratis en la ciudad de Cajamarca! Aplica para pedidos mayores a <b>S/50.00</b>.</p>
+        <p>Para saber si tu ubicación califica, ingresa tu dirección:</p>
+        <form id="verificarUbicacionForm">
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Tu dirección:</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Ej: Jr. Amazonas 123">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Verificar ubicación</button>
+        </form>
+        <div id="resultadoVerificacion" class="mt-3" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Manejo del formulario de verificación de ubicación
+  document.getElementById('verificarUbicacionForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const direccion = document.getElementById('direccion').value;
+
+    // Simular una verificación (puedes cambiar esto por una lógica real)
+    const esValida = direccion.toLowerCase().includes('cajamarca');
+    const resultadoDiv = document.getElementById('resultadoVerificacion');
+    resultadoDiv.style.display = 'block';
+    if (esValida) {
+      resultadoDiv.innerHTML = '<p class="text-success">¡Tu ubicación califica para entregas gratuitas!</p>';
+    } else {
+      resultadoDiv.innerHTML = '<p class="text-danger">Lo sentimos, las entregas gratuitas no están disponibles en tu área.</p>';
+    }
+  });
+</script>
+
+
+  <!-- Productos -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Producto 1 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan franaces" data-bs-product-description="Elaborado con harina de Inka, muy rico en todas sus presentaciones" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_003.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_003.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan franaces</h5>
+                <p class="card-text">Elaborado con harina de Inka, muy rico en todas sus presentaciones</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan con relleno" data-bs-product-description="Un pan muy distinto, por su dulzura y sabor" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_004.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_004.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan con relleno</h5>
+                <p class="card-text">Un pan muy distinto, por su dulzura y sabor</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan integral" data-bs-product-description="El más saludable, ideal para tu dieta" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_007.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_007.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan integral</h5>
+                <p class="card-text">El más saludable, ideal para tu dieta</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan caracol" data-bs-product-description="Un pan tradicional muy rico para degustar con toda la familia" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_005.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_005.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan caracol</h5>
+                <p class="card-text">Un pan tradicional muy rico para degustar con toda la familia</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan cuerno" data-bs-product-description="Hecho de harina y levadura, en forma de cuerno, se come solo o relleno" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_006.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_006.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan cuerno</h5>
+                <p class="card-text">Hecho de harina y levadura, en forma de cuerno, se come solo o relleno</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#productModal" data-bs-product-title="Pan de Chocolate" data-bs-product-description="Deliciosos panes de chocolate rellenos de crema" data-bs-product-price="5 x S/. 1.00" data-bs-product-image="img_prod/img_008.jfif">
+          <div class="row g-0">
+            <div class="col-6">
+              <img src="img_prod/img_008.jfif" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title">Pan de Chocolate</h5>
+                <p class="card-text">Deliciosos panes de chocolate rellenos de crema</p>
+                <p class="card-text"><small class="text-body-secondary">precio: 5 x S/. 1.00</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProductTitle">Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="Producto" class="img-fluid" id="modalProductImage">
+          <p id="modalProductDescription"></p>
+          <p><strong>Precio: </strong><span id="modalProductPrice"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--final-->
+  <footer>
+    <div class="container-fluid mt-5 bg-dark p-5 text-center text-white">
+        <div class="row">
+            <!-- Encuéntranos en -->
+            <div class="col-md-5">
+                <h5 class="text-uppercase">Encuéntranos en:</h5>
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <a href="#" target="_blank" class="icon text-white mx-2" aria-label="Facebook">
+                        <i class="bi bi-facebook fs-3"></i>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/51948090103" target="_blank" class="icon text-white mx-2" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp fs-3"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/la_marquinita/profilecard/?igsh=aWpneHptZm05aXBw" target="_blank" class="icon text-white mx-2" aria-label="Instagram">
+                        <i class="bi bi-instagram fs-3"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Horario de Atención -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Horario de Atención</h5>
+                <p>Lunes a Domingo 7:00 a.m. a 10:00 p.m.</p>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="col-md-3">
+                <h5 class="text-uppercase">Métodos de Pago</h5>
+                <div class="payment-icons d-flex justify-content-center">
+                    <!-- Yape -->
+                    <a href="https://yapeweb.bbva.com.pe/yape/qr/numero" target="_blank">
+                      <img src="img/yape.png" alt="Yape" class="mx-2" style="width: 40px;">
+                  </a>
+                    <!-- Plin -->
+                    <a href="#" target="_blank">
+                      <img src="img/plin.jpg" alt="Plin" class="mx-2" style="width: 40px;">
+                  </a>
+                    <!-- Visa -->
+                    <a href="#" target="_blank">
+                      <img src="img/visa.webp" alt="Visa" class="mx-2" style="width: 40px;">
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Script para cargar el contenido dinámico en el modal
+    const productModal = document.getElementById('productModal');
+    productModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget; // El botón que activó el modal
+      const title = button.getAttribute('data-bs-product-title');
+      const description = button.getAttribute('data-bs-product-description');
+      const price = button.getAttribute('data-bs-product-price');
+      const image = button.getAttribute('data-bs-product-image');
+
+      // Inserta los valores en el modal
+      const modalTitle = productModal.querySelector('#modalProductTitle');
+      const modalDescription = productModal.querySelector('#modalProductDescription');
+      const modalPrice = productModal.querySelector('#modalProductPrice');
+      const modalImage = productModal.querySelector('#modalProductImage');
+
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modalPrice.textContent = price;
+      modalImage.src = image;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Marquinita.com</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="estilo_registro.css">
+    <script src="https://cdn.userway.org/widget.js" data-account="K1UREd5u99"></script>
+
+</head>
+<body>
+    <main class="ihpone">
+        <h2>Crear Cuenta</h2>
+
+        <!-- Formulario de registro -->
+        <form onsubmit="event.preventDefault(); registrarUsuario();">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" placeholder="Nombres" class="input" required />
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" placeholder="Apellidos" class="input" required />
+
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechaNacimiento" class="input" required />
+
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" placeholder="Edad" class="input" required />
+
+            <label for="numeroCelular">Número de Celular</label>
+            <input type="tel" id="numeroCelular" placeholder="Número de Celular" class="input" required />
+
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" placeholder="Ciudad" class="input" required />
+
+            <label for="pais">País</label>
+            <input type="text" id="pais" placeholder="País" class="input" required />
+
+            <label for="nuevoUsuario">Usuario</label>
+            <input type="text" id="nuevoUsuario" placeholder="Usuario" class="input" required />
+
+            <label for="nuevoEmail">Correo electrónico</label>
+            <input type="email" id="nuevoEmail" placeholder="Correo electrónico" class="input" required />
+
+            <label for="nuevaContrasena">Contraseña</label>
+            <input type="password" id="nuevaContrasena" placeholder="Contraseña" class="input" required />
+
+            <button type="submit" class="login-button">Crear Cuenta</button>
+        </form>
+
+        <div id="mensajeExito" style="display:none; color: green;">¡Usuario registrado con éxito!</div>
+
+        <div class="text-wrapper-6">
+            ¿Ya tienes una cuenta? <a href="inicio_de_sesión__panaderia.html">Inicia sesión</a>
+        </div>
+    </main>
+
+    <script>
+        function registrarUsuario() {
+            var nombres = document.getElementById("nombres").value;
+            var apellidos = document.getElementById("apellidos").value;
+            var email = document.getElementById("nuevoEmail").value;
+            var contrasena = document.getElementById("nuevaContrasena").value;
+
+            // Validación de email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor ingresa un correo electrónico válido.");
+                return;
+            }
+
+            // Validación de contraseña
+            if (contrasena.length < 6) {
+                alert("La contraseña debe tener al menos 6 caracteres.");
+                return;
+            }
+
+            // Mostrar mensaje de éxito
+            document.getElementById("mensajeExito").style.display = 'block';
+        }
+    </script>
+</body>
+</html>

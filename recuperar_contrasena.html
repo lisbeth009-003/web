@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Marquinita.com</title>
+    <link rel="stylesheet" href="Estilo_recuperacion de contraseña.css">
+    <script src="https://cdn.userway.org/widget.js" data-account="K1UREd5u99"></script>
+
+</head>
+<body>
+    <div class="recuperar-contrasena">
+        <h2>Recuperar Contraseña</h2>
+        <p>Ingresa tu correo electrónico para restablecer tu contraseña</p>
+        <input type="email" id="email" placeholder="Correo electrónico" class="input" required aria-label="Correo electrónico" />
+        <button class="login-button" onclick="enviarInstrucciones()">Enviar codigo</button>
+        <div class="text-wrapper">
+            <p>¿Ya recibiste el codigo?</p>
+            <div class="text-wrapper-6">
+                <a href="inicio_de_sesión__panaderia.html">Inicia sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviarInstrucciones() {
+            var email = document.getElementById("email").value;
+            // Validación simple del formato del correo electrónico
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (regex.test(email)) {
+                alert("Instrucciones enviadas a " + email);
+            } else {
+                alert("Por favor ingresa un correo electrónico válido.");
+            }
+        }
+    </script>
+</body>
+</html>

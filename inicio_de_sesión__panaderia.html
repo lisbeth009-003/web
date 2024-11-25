@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Inicio de Sesión - Marquinita.com</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="Estilo_panaderia.css">
+    <script src="https://cdn.userway.org/widget.js" data-account="K1UREd5u99"></script>
+
+    <script>
+        function iniciarSesion() {
+            // Obtener los valores del formulario
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Definir un objeto con varios usuarios y contraseñas
+            var usuarios = {
+                "Ariana": "ariana123",
+                "Mery": "mery123",
+                "Roberth": "roberth123",
+                "Viviana": "viviana123",
+                "Luis": "luis123",
+            };
+
+            // Verificar si el usuario existe en el objeto 'usuarios' y si la contraseña es correcta
+            if (usuarios[usuario] === contrasena) {
+                // Redirigir al usuario a la página de productos con el nombre de usuario
+                location.href = "prod.html?usuario=" + encodeURIComponent(usuario);
+            } else {
+                // Mostrar un mensaje de error si los datos no coinciden
+                alert("Usuario o contraseña incorrectos. Intenta nuevamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="ihpone">
+        <div class="overlay">
+            <div class="text-wrapper">Iniciar sesión</div>
+            <div class="text-wrapper2">Bienvenidos a la Marquinita.com</div>
+        </div>
+        <p>Ingrese su usuario y contraseña para iniciar sesión</p>
+        <!-- Formulario de inicio de sesión -->
+        <input type="text" id="usuario" placeholder="Usuario" class="input" />
+        <input type="password" id="contrasena" placeholder="Contraseña" class="input" />
+        <!-- Botón para iniciar sesión -->
+        <button class="login-button" onclick="iniciarSesion()">Iniciar sesión</button>
+        <div class="text-wrapper-4">
+            <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Sección de iniciar sesión con Google -->
+        <div class="overlap-group">
+            <img class="image" src="img/el-logo-g-de-google.png" alt="Logo de Google"/>
+            <div class="text-wrapper-3" onclick="location.href='prod.html';">
+                Iniciar sesión con Google
+            </div>
+        </div>
+
+        <div class="text-wrapper-5">¿Eres nuevo en la Marquinita.com?</div>
+        <div class="text-wrapper-6">
+            <a href="registro.html">Crear cuenta</a>
+        </div>
+    </div>
+</body>
+</html>

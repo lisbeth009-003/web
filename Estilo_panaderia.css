@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Color de fondo */
+}
+
+.ihpone {
+    background-color: #ffffff;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    width: 90%;
+    max-width: 400px; /* Ancho máximo */
+}
+
+.text-wrapper, .text-wrapper2 {
+    text-align: center;
+}
+
+.input {
+    width: calc(100% - 20px); /* Ajuste para padding */
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados en los campos */
+}
+
+.login-button {
+    background-color: #2448e7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados en el botón */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #1e3fbe;
+}
+
+.text-wrapper-4, .text-wrapper-5, .text-wrapper-6 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* Estilo para el enlace "Olvidaste tu contraseña?" */
+.text-wrapper-4:hover {
+    color: #1e3fbe;
+    text-decoration: underline;
+}
+
+/* Efecto de barra deslizante que aparece al pasar el mouse sobre "Olvidaste tu contraseña?" y "Iniciar sesión con Google" */
+.text-wrapper-4::after, .text-wrapper-6::after, .text-wrapper-3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2448e7;
+    transition: width 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto de carga al pasar el mouse sobre "Olvidaste tu contraseña?" */
+.text-wrapper-4:hover::after, .text-wrapper-6:hover::after, .text-wrapper-3:hover::after {
+    width: 100%; /* La barra se expande a lo largo del texto */
+}
+
+
+.text-wrapper-6 {
+    color: #2448e7; /* Color del enlace */
+    cursor: pointer;
+}
+
+.text-wrapper-6:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+.overlap-group {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+}
+/* Estilo de la imagen del logo de Google */
+.image {
+    width: 40px; 
+    height: 30px; 
+    margin-right: 0px; /* Espacio entre el logo y el texto */
+}
+/* Texto que acompaña el logo de Google */
+.text-wrapper-3 {
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2448e7;
+}
+
+/* Efecto de barra deslizante para el texto "Iniciar sesión con Google" */
+.text-wrapper-3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2448e7;
+    transition: width 0.3s ease; /* Suaviza la animación */
+}
+
+.text-wrapper-3:hover::after {
+    width: 100%; /* La barra se expande a lo largo del texto */
+}

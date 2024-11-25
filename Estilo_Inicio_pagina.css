@@ -1,0 +1,82 @@
+/* Estilo de la barra de navegación */
+.navbar {
+    background-image: url('img/img_01.jfif');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar h1, .navbar p {
+    color: #fff;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    margin-top: 30px;
+}
+
+/* Botón con ubicación y carrito */
+.btn-light {
+    background-color: #a1601e;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+/* Estilos del ícono de más */
+.btn-primary {
+    background-color: #2448e7;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-primary i {
+    font-size: 25px;
+}
+
+/* Estilo de las tarjetas de productos */
+.card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Estilo del pie de página */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Separación entre íconos */
+    margin-top: 10px;
+}
+
+.social-icons .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 50%; /* Hace los íconos circulares */
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    background-color: #fff;
+    color: #000; /* Cambia el color al pasar el cursor */
+}
+
+.social-icons .icon i {
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+h5 {
+    margin-bottom: 15px; /* Asegura espacio entre "Encuéntranos en:" y los íconos */
+    color: #fff; /* Asegura que el texto sea visible */
+}
+
